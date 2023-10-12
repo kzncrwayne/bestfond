@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', Times, serif;
+}
+section {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 70px;
+    font-size: 20px;
+}
+h1 {
+    text-align: center;
+    font-weight:400;
+    font-size:xx-large;
+}
+._block {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+.hljs {
+    background: #f3f2f6;
+    font-size:larger;
+    color: gray;
+    font-weight:500;
+    padding: 15px;
+}
+p {
+    font-size:larger;
+}
+._img {
+    margin-top: 100px;
+}
+h5 {
+    font-weight: 100;
+}
+h4 {
+    font-weight: 100;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border: 1px solid;
+    border-spacing: 0;
+    text-align: left;
+}
+td, th {
+    border: 1px solid;
+    vertical-align: top;
+}
+.images {
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+img {
+    width: 400px;
+}
+.preloader__scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    
+    }
+    
+    .preloader__block {
+        width: 50%;
+        background-color: rgb(87, 15, 15);
+        animation: leftblock 1s linear forwards;
+    }
+    
+    .preloader__block:last-child {
+        animation: rightblock 1s linear forwards;
+    }
+    
+    .loading__block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: loading .2s ease forwards;
+        animation-delay: .5s;
+    }
+    
+    .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .progress {
+        width: 200px;
+        height: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        position: relative;
+    }
+    
+    .progress::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        left: 0%;
+        background-color: rgb(0, 0, 0);
+        animation: progressLine .4s ease forwards;
+        border-radius: 4px;
+    }
+    
+    @keyframes loading {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes progressLine {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: calc(100% - 1px );
+        }
+    }
+    
+    @keyframes leftblock {
+        0% {
+            transform: translate(0) scale(1) rotateY(0);
+        }
+        50% {
+            transform: translate(0) scale(.9) rotateY(10deg);
+        }
+        100% {
+            transform: translate(-100%) scale(.9) rotateY(10deg);
+        }
+    }
+    
+    @keyframes rightblock {
+        0% {
+            transform: translate(0) scale(1) rotateY(0);
+        }
+        50% {
+            transform: translate(0) scale(.9) rotateY(-10deg);
+        }
+        100% {
+            transform: translate(100%) scale(.9) rotateY(-10deg);
+        }
+    }
+
+
+
+
+
+@media (max-width: 1000px) {
+    section {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 70px;
+        font-size: 20px;
+    }
+}
